@@ -75,6 +75,7 @@ PODS:
   - glog (0.3.5)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.1100)
+  - QNRTPlayerKit (1.0.0)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
     - DoubleConversion
@@ -383,6 +384,7 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (= 0.125.0)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - OpenSSL-Universal (= 1.1.1100)
+  - QNRTPlayerKit
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
@@ -428,6 +430,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - QNRTPlayerKit
     - SocketRocket
     - YogaKit
 
@@ -516,6 +519,7 @@ SPEC CHECKSUMS:
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
+  QNRTPlayerKit: 8c83ced159ab3c2d9b25ea2cce7a064857c8870e
   RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
   RCTRequired: b723d4d6da2795df58189a01f92856b6912cf256
   RCTTypeSafety: 3973d2fcf39f43f7819e840d56ea6b2fe45996a0
@@ -546,6 +550,6 @@ SPEC CHECKSUMS:
   Yoga: 236056dd74cda4d9d76c20306fd8c20bb087614d
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 58f5359be48403e30150ddeb6e6c520df04c79f1
+PODFILE CHECKSUM: 64f69ff434cd562350e7b8b6c2d7b0f18600345a
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

@@ -8,6 +8,8 @@ production = ENV["PRODUCTION"] == "1"
 
 target 'MyApp' do
   config = use_native_modules!
+  # 7 cow player
+  pod 'QNRTPlayerKit'
 
   # Flags change depending on the env values.
   flags = get_default_flags()
