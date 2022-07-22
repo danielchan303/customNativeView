@@ -12,9 +12,7 @@ const MyView = React.forwardRef((props: MyViewProps, ref) => {
   const componentRef = React.useRef(null);
 
   React.useImperativeHandle(ref, () => ({
-    increment: () => {
-      increment();
-    },
+    increment,
     decrement,
   }));
 
@@ -36,7 +34,13 @@ const MyView = React.forwardRef((props: MyViewProps, ref) => {
     );
   };
 
-  return <CounterView ref={componentRef} count={5} style={props.style} />;
+  return (
+    <CounterView
+      ref={componentRef}
+      source={'https://live-pilidemo.cloudvdn.com/pilidemo/timestamp.m3u8'}
+      style={props.style}
+    />
+  );
 });
 
 export default MyView;
