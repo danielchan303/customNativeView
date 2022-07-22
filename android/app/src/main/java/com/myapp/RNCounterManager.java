@@ -1,5 +1,6 @@
 package com.myapp;
 import android.util.Log;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,10 +16,10 @@ import com.facebook.react.views.image.ReactImageView;
 
 import java.util.Map;
 
-public class RNCounterManager extends SimpleViewManager<TextView> {
+public class RNCounterManager extends SimpleViewManager<FrameLayout> {
     public static final String REACT_CLASS = "MyCounter";
     ReactApplicationContext mCallerContext;
-    TextView textView;
+    FrameLayout frameLayout;
     Integer counter = 0;
 
     public final String INCREMENT = "INCREMENT";
@@ -30,7 +31,6 @@ public class RNCounterManager extends SimpleViewManager<TextView> {
 
     private void updateUI() {
         Log.d("Daniel debug", "UpdateUi " + counter);
-        textView.setText(String.valueOf(counter));
     }
 
     @Override
@@ -39,31 +39,19 @@ public class RNCounterManager extends SimpleViewManager<TextView> {
     }
 
     @Override
-    public TextView createViewInstance(ThemedReactContext context) {
-        textView = new TextView(context);
-        textView.setText("0");
-        return textView;
+    public FrameLayout createViewInstance(ThemedReactContext context) {
+        frameLayout = new MyCustomView(context);
+        return frameLayout;
     }
 
     @Override
-    public void receiveCommand(@NonNull TextView root, String commandId, @Nullable ReadableArray args) {
+    public void receiveCommand(@NonNull FrameLayout root, String commandId, @Nullable ReadableArray args) {
         super.receiveCommand(root, commandId, args);
         Log.d("Daniel debug", commandId);
-        switch(commandId) {
-            case INCREMENT:
-                counter++;
-                updateUI();
-                break;
-            case DECREMENT:
-                counter--;
-                updateUI();
-                break;
-        }
     }
 
     @ReactProp(name = "count")
-    public void setCount(TextView view, @Nullable int count) {
+    public void setCount(FrameLayout view, @Nullable int count) {
         counter = count;
-        view.setText(String.valueOf(count));
     }
 }
